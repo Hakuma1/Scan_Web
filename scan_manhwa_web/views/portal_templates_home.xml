@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <template id="portal_my_home_manhwa" name="Manhwa" inherit_id="portal.portal_my_home">
+            <xpath expr="//div[@id='portal_common_category']" position="after">
+                <div class="o_portal_category row g-2 mt-3" id="manhwa_menu">
+                    <t t-call="portal.portal_docs_entry">
+                    <t t-set="icon"
+                       t-value="'/scan_manhwa_web/static/src/img/manhwa.jpeg'"/>
+                    <t t-set="title">Manhwa</t>
+                    <t t-set="text">Find your read and unread manhwas here</t>
+                    <t t-set="url" t-value="'/my/manhwas'"/>
+                    <t t-set="config_card" t-value="True"/>
+                </t>
+                </div>
+            </xpath>
+        </template>
+
+        <template id="my_portal_manhwa" name="Portal Manhwa Home">
+        <t t-call="portal.portal_layout">
+            <t t-set="my_details" t-value="True"/>
+            <div class="o_portal_my_home">
+                <div class="oe_structure" id="oe_structure_portal_my_home_1"/>
+                <div class="o_portal_docs row g-2">
+                    <div class="o_portal_doc_spinner spinner-border text-o-color-2 align-self-center mt-5"/>
+
+                    <div class="o_portal_category row g-2 mt-3" id="portal_common_category">
+                        <t t-call="portal.portal_docs_entry">
+                            <t t-set="icon"
+                               t-value="'/scan_manhwa_web/static/src/img/scan_manhwa_web-intervention.svg'"/>
+                            <t t-set="title">Manhwas read and finished</t>
+                            <t t-set="text">View your read and finished manhwas</t>
+                            <t t-set="url" t-value="'/my/manhwas/read_and_finished'"/>
+                            <t t-set="config_card" t-value="True"/>
+                        </t>
+                        <t t-call="portal.portal_docs_entry">
+                            <t t-set="icon"
+                               t-value="'/project/static/src/img/tasks.svg'"/>
+                            <t t-set="title">Manhwa being read</t>
+                            <t t-set="text">View your manhwas in progress</t>
+                            <t t-set="url" t-value="'/my/manhwas/reading'"/>
+                            <t t-set="config_card" t-value="True"/>
+                        </t>
+                        <t t-call="portal.portal_docs_entry">
+                            <t t-set="icon"
+                               t-value="'/scan_manhwa_web/static/src/img/scan_manhwa_web-visit_plan.svg'"/>
+                            <t t-set="title">Manhwa to read</t>
+                            <t t-set="text">>View your manhwas to read</t>
+                            <t t-set="url" t-value="'/my/manhwas/to_read'"/>
+                            <t t-set="config_card" t-value="True"/>
+                        </t>
+                    </div>
+                </div>
+            </div>
+            <div class="oe_structure" id="oe_structure_portal_my_home_2"/>
+        </t>
+    </template>
+    </data>
+</odoo>
